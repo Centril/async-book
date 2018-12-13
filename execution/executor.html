@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Applied: Build an Executor - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../getting_started/chapter.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li><a href="../getting_started/chapter.html"><strong aria-hidden="true">1.1.</strong> What This Book Covers</a></li><li><a href="../getting_started/why_async.html"><strong aria-hidden="true">1.2.</strong> Why Async?</a></li><li><a href="../getting_started/state_of_async_rust.html"><strong aria-hidden="true">1.3.</strong> The State of Asynchronous Rust</a></li><li><a href="../getting_started/async_await_primer.html"><strong aria-hidden="true">1.4.</strong> async/await! Primer</a></li><li><a href="../getting_started/http_server_example.html"><strong aria-hidden="true">1.5.</strong> Applied: HTTP Server</a></li></ol></li><li><a href="../execution/chapter.html"><strong aria-hidden="true">2.</strong> Under the Hood: Executing Futures and Tasks</a></li><li><ol class="section"><li><a href="../execution/future.html"><strong aria-hidden="true">2.1.</strong> The Future Trait</a></li><li><a href="../execution/wakeups.html"><strong aria-hidden="true">2.2.</strong> Task Wakeups with LocalWaker and Waker</a></li><li><ol class="section"><li><a href="../execution/wakeups.html"><strong aria-hidden="true">2.2.1.</strong> Applied: Build a Timer</a></li></ol></li><li><a href="../execution/executor.html" class="active"><strong aria-hidden="true">2.3.</strong> Applied: Build an Executor</a></li><li><a href="../execution/io.html"><strong aria-hidden="true">2.4.</strong> Executors and System IO</a></li></ol></li><li><a href="../404.html"><strong aria-hidden="true">3.</strong> TODO: async/await</a></li><li><ol class="section"><li><a href="../404.html"><strong aria-hidden="true">3.1.</strong> TODO: What and Why</a></li><li><a href="../404.html"><strong aria-hidden="true">3.2.</strong> TODO: async Blocks, Closures, and Functions</a></li><li><a href="../404.html"><strong aria-hidden="true">3.3.</strong> TODO: Applied: XXX</a></li></ol></li><li><a href="../pinning/chapter.html"><strong aria-hidden="true">4.</strong> Pinning</a></li><li><ol class="section"><li><a href="../pinning/chapter.html"><strong aria-hidden="true">4.1.</strong> Practical Usage</a></li></ol></li><li><a href="../streams/chapter.html"><strong aria-hidden="true">5.</strong> Streams</a></li><li><ol class="section"><li><a href="../404.html"><strong aria-hidden="true">5.1.</strong> TODO: Patterns: Iteration and Concurrency</a></li></ol></li><li><a href="../404.html"><strong aria-hidden="true">6.</strong> TODO: Executing Multiple Futures at a Time</a></li><li><ol class="section"><li><a href="../404.html"><strong aria-hidden="true">6.1.</strong> TODO: select! and join!</a></li><li><a href="../404.html"><strong aria-hidden="true">6.2.</strong> TODO: Spawning</a></li><li><a href="../404.html"><strong aria-hidden="true">6.3.</strong> TODO: Cancellation and Timeouts</a></li><li><a href="../404.html"><strong aria-hidden="true">6.4.</strong> TODO: FuturesUnordered</a></li></ol></li><li><a href="../404.html"><strong aria-hidden="true">7.</strong> TODO: I/O</a></li><li><ol class="section"><li><a href="../404.html"><strong aria-hidden="true">7.1.</strong> TODO: AsyncRead and AsyncWrite</a></li></ol></li><li><a href="../404.html"><strong aria-hidden="true">8.</strong> TODO: Asynchronous Design Patterns: Solutions and Suggestions</a></li><li><ol class="section"><li><a href="../404.html"><strong aria-hidden="true">8.1.</strong> TODO: Modeling Servers and the Request/Response Pattern</a></li><li><a href="../404.html"><strong aria-hidden="true">8.2.</strong> TODO: Managing Shared State</a></li></ol></li><li><a href="../404.html"><strong aria-hidden="true">9.</strong> TODO: The Ecosystem: Tokio and More</a></li><li><ol class="section"><li><a href="../404.html"><strong aria-hidden="true">9.1.</strong> TODO: Lots, lots more?...</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title"></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#applied-build-an-executor" id="applied-build-an-executor"><h1>Applied: Build an Executor</h1></a>
+<p><code>Future</code>s are lazy and must be actively driven to completion in order to do
+anything. A common way to drive a future to completion is to <code>await!</code> it inside
+an <code>async</code> function, but that just pushes the problem one level up: who will
+run the futures returned from the top-level <code>async</code> functions? The answer is
+that we need a <code>Future</code> executor.</p>
+<p><code>Future</code> executors take a set of top-level <code>Future</code>s and run them to completion
+by calling <code>poll</code> whenever the <code>Future</code> can make progress. Typically, an
+executor will <code>poll</code> a future once to start off. When <code>Future</code>s indicate that
+they are ready to make progress by calling <code>wake()</code>, they are placed back
+onto a queue and <code>poll</code> is called again, repeating until the <code>Future</code> has
+completed.</p>
+<p>In this section, we'll write our own simple executor capable of running a large
+number of top-level futures to completion concurrently.</p>
+<p>For this one, we're going to have to include the <code>futures</code> crate in order to
+get the <code>FutureObj</code> type, which is a dynamically-dispatched <code>Future</code>, similar
+to <code>Box&lt;dyn Future&lt;Output = T&gt;&gt;</code>. <code>Cargo.toml</code> should look something like this:</p>
+<pre><code class="language-toml">[package]
+name = &quot;xyz&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;XYZ Author&quot;]
+edition = &quot;2018&quot;
+
+[dependencies]
+futures-preview = &quot;0.3.0-alpha.9&quot;
+</code></pre>
+<p>Next, we need the following imports at the top of <code>src/main.rs</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![feature(arbitrary_self_types, async_await, await_macro, futures_api, pin)]
+
+#fn main() {
+use {
+    futures::future::FutureObj,
+    std::{
+        future::Future,
+        pin::Pin,
+        sync::{Arc, Mutex},
+        sync::mpsc::{sync_channel, SyncSender, Receiver},
+        task::{
+            local_waker_from_nonlocal,
+            Poll, Wake,
+        },
+    },
+};
+#}</code></pre></pre>
+<p>Our executor will work by sending tasks to run over a channel. The executor
+will pull events off of the channel and run them. When a task is ready to
+do more work (is awoken), it can schedule itself to be polled again by
+putting itself back onto the channel.</p>
+<p>In this design, the executor itself just needs the receiving end of the task
+channel. The user will get a sending end so that they can spawn new futures.
+Tasks themselves are just futures that can reschedule themselves, so we'll
+store them as a future paired with a sender that the task can use to requeue
+itself.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Task executor that receives tasks off of a channel and runs them.
+struct Executor {
+    ready_queue: Receiver&lt;Arc&lt;Task&gt;&gt;,
+}
+
+/// `Spawner` spawns new futures onto the task channel.
+#[derive(Clone)]
+struct Spawner {
+    task_sender: SyncSender&lt;Arc&lt;Task&gt;&gt;,
+}
+
+/// A future that can reschedule itself to be polled using a channel.
+struct Task {
+    // In-progress future that should be pushed to completion
+    //
+    // The `Mutex` is not necessary for correctness, since we only have
+    // one thread executing tasks at once. However, `rustc` isn't smart
+    // enough to know that `future` is only mutated from one thread,
+    // so we use it in order to provide safety. A production executor would
+    // not need this, and could use `UnsafeCell` instead.
+    future: Mutex&lt;Option&lt;FutureObj&lt;'static, ()&gt;&gt;&gt;,
+
+    // Handle to spawn tasks onto the task queue
+    task_sender: SyncSender&lt;Arc&lt;Task&gt;&gt;,
+}
+
+fn new_executor_and_spawner() -&gt; (Executor, Spawner) {
+    // Maximum number of tasks to allow queueing in the channel at once.
+    // This is just to make `sync_channel` happy, and wouldn't be present in
+    // a real executor.
+    const MAX_QUEUED_TASKS: usize = 10_000;
+    let (task_sender, ready_queue) = sync_channel(MAX_QUEUED_TASKS);
+    (Executor { ready_queue }, Spawner { task_sender})
+}
+#}</code></pre></pre>
+<p>Let's also add a method to spawner to make it easy to spawn new futures.
+This method will take a future type, box it and put it in a FutureObj,
+and create a new <code>Arc&lt;Task&gt;</code> with it inside which can be enqueued onto the
+executor.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Spawner {
+    fn spawn(&amp;self, future: impl Future&lt;Output = ()&gt; + 'static + Send) {
+        let future_obj = FutureObj::new(Box::new(future));
+        let task = Arc::new(Task {
+            future: Mutex::new(Some(future_obj)),
+            task_sender: self.task_sender.clone(),
+        });
+        self.task_sender.send(task).expect(&quot;too many tasks queued&quot;);
+    }
+}
+#}</code></pre></pre>
+<p>In order poll futures, we'll also need to create a <code>LocalWaker</code> to provide to
+poll. As discussed in the <a href="TODO">task wakeups section</a>, <code>LocalWaker</code>s are responsible
+for scheduling a task to be polled again once <code>wake</code> is called. Remember that
+<code>LocalWaker</code>s tell the executor exactly which task has become ready, allowing
+them to poll just the futures that are ready to make progress. The easiest way
+to create a new <code>LocalWaker</code> is by implementing the <code>Wake</code> trait and then using
+the <code>local_waker_from_nonlocal</code> or <code>local_waker</code> functions to turn a <code>Arc&lt;T: Wake&gt;</code>
+into a <code>LocalWaker</code>. Let's implement <code>Wake</code> for our tasks to allow them to be
+turned into <code>LocalWaker</code>s and awoken:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Wake for Task {
+    fn wake(arc_self: &amp;Arc&lt;Self&gt;) {
+        // Implement `wake` by sending this task back onto the task channel
+        // so that it will be polled again by the executor.
+        let cloned = arc_self.clone();
+        arc_self.task_sender.send(cloned).expect(&quot;too many tasks queued&quot;);
+    }
+}
+#}</code></pre></pre>
+<p>When a <code>LocalWaker</code> is created from an <code>Arc&lt;Task&gt;</code>, calling <code>wake()</code> on it will
+cause a copy of the <code>Arc</code> to be sent onto the task channel. Our executor then
+needs to pick up the task and poll it. Let's implement that:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Executor {
+    fn run(&amp;self) {
+        while let Ok(task) = self.ready_queue.recv() {
+            let mut future_slot = task.future.lock().unwrap();
+            // Take the future, and if it has not yet completed (is still Some),
+            // poll it in an attempt to complete it.
+            if let Some(mut future) = future_slot.take() {
+                // Create a `LocalWaker` from the task itself
+                let lw = local_waker_from_nonlocal(task.clone());
+                if let Poll::Pending = Pin::new(&amp;mut future).poll(&amp;lw) {
+                    // We're not done processing the future, so put it
+                    // back in its task to be run again in the future.
+                    *future_slot = Some(future);
+                }
+            }
+        }
+    }
+}
+#}</code></pre></pre>
+<p>Congratulations! We now have a working futures executor. We can even use it
+to run <code>async/await!</code> code and custom futures, such as the <code>TimerFuture</code> we
+wrote earlier:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let (executor, spawner) = new_executor_and_spawner();
+    spawner.spawn(async {
+        println!(&quot;howdy!&quot;);
+        // Wait for our timer future to complete after two seconds.
+        await!(TimerFuture::new(Duration::new(2, 0)));
+        println!(&quot;done!&quot;);
+    });
+    executor.run();
+}
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../execution/wakeups.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../execution/io.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../execution/wakeups.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../execution/io.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

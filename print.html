@@ -1,0 +1,1537 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="getting_started/chapter.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li><a href="getting_started/chapter.html"><strong aria-hidden="true">1.1.</strong> What This Book Covers</a></li><li><a href="getting_started/why_async.html"><strong aria-hidden="true">1.2.</strong> Why Async?</a></li><li><a href="getting_started/state_of_async_rust.html"><strong aria-hidden="true">1.3.</strong> The State of Asynchronous Rust</a></li><li><a href="getting_started/async_await_primer.html"><strong aria-hidden="true">1.4.</strong> async/await! Primer</a></li><li><a href="getting_started/http_server_example.html"><strong aria-hidden="true">1.5.</strong> Applied: HTTP Server</a></li></ol></li><li><a href="execution/chapter.html"><strong aria-hidden="true">2.</strong> Under the Hood: Executing Futures and Tasks</a></li><li><ol class="section"><li><a href="execution/future.html"><strong aria-hidden="true">2.1.</strong> The Future Trait</a></li><li><a href="execution/wakeups.html"><strong aria-hidden="true">2.2.</strong> Task Wakeups with LocalWaker and Waker</a></li><li><ol class="section"><li><a href="execution/wakeups.html"><strong aria-hidden="true">2.2.1.</strong> Applied: Build a Timer</a></li></ol></li><li><a href="execution/executor.html"><strong aria-hidden="true">2.3.</strong> Applied: Build an Executor</a></li><li><a href="execution/io.html"><strong aria-hidden="true">2.4.</strong> Executors and System IO</a></li></ol></li><li><a href="404.html"><strong aria-hidden="true">3.</strong> TODO: async/await</a></li><li><ol class="section"><li><a href="404.html"><strong aria-hidden="true">3.1.</strong> TODO: What and Why</a></li><li><a href="404.html"><strong aria-hidden="true">3.2.</strong> TODO: async Blocks, Closures, and Functions</a></li><li><a href="404.html"><strong aria-hidden="true">3.3.</strong> TODO: Applied: XXX</a></li></ol></li><li><a href="pinning/chapter.html"><strong aria-hidden="true">4.</strong> Pinning</a></li><li><ol class="section"><li><a href="pinning/chapter.html"><strong aria-hidden="true">4.1.</strong> Practical Usage</a></li></ol></li><li><a href="streams/chapter.html"><strong aria-hidden="true">5.</strong> Streams</a></li><li><ol class="section"><li><a href="404.html"><strong aria-hidden="true">5.1.</strong> TODO: Patterns: Iteration and Concurrency</a></li></ol></li><li><a href="404.html"><strong aria-hidden="true">6.</strong> TODO: Executing Multiple Futures at a Time</a></li><li><ol class="section"><li><a href="404.html"><strong aria-hidden="true">6.1.</strong> TODO: select! and join!</a></li><li><a href="404.html"><strong aria-hidden="true">6.2.</strong> TODO: Spawning</a></li><li><a href="404.html"><strong aria-hidden="true">6.3.</strong> TODO: Cancellation and Timeouts</a></li><li><a href="404.html"><strong aria-hidden="true">6.4.</strong> TODO: FuturesUnordered</a></li></ol></li><li><a href="404.html"><strong aria-hidden="true">7.</strong> TODO: I/O</a></li><li><ol class="section"><li><a href="404.html"><strong aria-hidden="true">7.1.</strong> TODO: AsyncRead and AsyncWrite</a></li></ol></li><li><a href="404.html"><strong aria-hidden="true">8.</strong> TODO: Asynchronous Design Patterns: Solutions and Suggestions</a></li><li><ol class="section"><li><a href="404.html"><strong aria-hidden="true">8.1.</strong> TODO: Modeling Servers and the Request/Response Pattern</a></li><li><a href="404.html"><strong aria-hidden="true">8.2.</strong> TODO: Managing Shared State</a></li></ol></li><li><a href="404.html"><strong aria-hidden="true">9.</strong> TODO: The Ecosystem: Tokio and More</a></li><li><ol class="section"><li><a href="404.html"><strong aria-hidden="true">9.1.</strong> TODO: Lots, lots more?...</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title"></h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#getting-started" id="getting-started"><h1>Getting Started</h1></a>
+<p>Welcome to Asynchronous Programming in Rust! If you're looking to start writing
+asynchronous Rust code, you've come to the right place. Whether you're building
+a web server, a database, or an operating system, this book will show you
+how to use Rust's asynchronous programming tools to get the most out of your
+hardware.</p>
+<a class="header" href="#what-this-book-covers" id="what-this-book-covers"><h2>What This Book Covers</h2></a>
+<p>This book aims to be a comprehensive, up-to-date guide to using Rust's async
+language features and libraries, appropriate for beginners and old hands alike.</p>
+<ul>
+<li>
+<p>The early chapters provide an introduction to async programming in general,
+and to Rust's particular take on it.</p>
+</li>
+<li>
+<p>The middle chapters discuss key utilities and control-flow tools you can use
+when writing async code, and describe best-practices for structuring libraries
+and applications to maximize performance and reusability.</p>
+</li>
+<li>
+<p>The last section of the book covers the broader async ecosystem, and provides
+a number of examples of how to accomplish common tasks.</p>
+</li>
+</ul>
+<p>With that out of the way, let's explore the exciting world of Asynchronous
+Programming in Rust!</p>
+<a class="header" href="#what-this-book-covers-1" id="what-this-book-covers-1"><h1>What This Book Covers</h1></a>
+<a class="header" href="#why-async" id="why-async"><h2>Why Async?</h2></a>
+<p>We all love how Rust allows us to write fast, safe software. But why write
+asynchronous code?</p>
+<p>Asynchonous code allows us to run multiple tasks concurrently on the same OS
+thread. In a typical threaded application, if you wanted to download two
+different webpages at the same time, you would spread the work across two
+different threads, like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn get_two_sites() {
+    // Spawn two threads to do work.
+    let thread_one = thread::spawn(|| download(&quot;https:://www.foo.com&quot;));
+    let thread_two = thread::spawn(|| download(&quot;https:://www.bar.com&quot;));
+
+    // Wait for both threads to complete.
+    thread_one.join();
+    thread_two.join();
+}
+#}</code></pre></pre>
+<p>This works fine for many applications-- after, all threads were designed
+to do just this: run multiple different tasks at once. However, they also
+come with some limitations. There's a lot of overhead involved in the
+process of switching between different threads and sharing data between
+threads. Even a thread which just sits and does nothing uses up valuable
+system resources. These are the costs that asynchronous code is designed
+to eliminate. We can rewrite the function above using Rust's
+<code>async</code>/<code>await!</code> notation, which will allow us to run multiple tasks at
+once without creating multiple threads:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+async fn get_two_sites() {
+    // Create a two different &quot;futures&quot; which, when run to completion,
+    // will asynchronously download the webpages.
+    let future_one = download_async(&quot;https:://www.foo.com&quot;);
+    let future_two = download_async(&quot;https:://www.bar.com&quot;);
+
+    // Run both futures to completion at the same time.
+    join!(future_one, future_two);
+}
+#}</code></pre></pre>
+<p>Overall, asynchronous applications have the potential to be much faster and
+use fewer resources than a corresponding threaded implementation. However,
+there is a cost. Threads are natively supported by the operating system,
+and using them doesn't require any special programming model-- any function
+can create a thread, and calling a function that uses threads is usually
+just as easy as calling any normal function. However, asynchronous functions
+require special support from the language or libraries in order to work.
+In Rust, <code>async fn</code> creates an asynchronous function which, when called,
+will return a future which needs to be run to completion in order for the
+body of the function to execute.</p>
+<p>It's important to remember that traditional threaded applications can be quite
+effective, and that Rust's small memory footprint and predictability mean that
+you can get far without ever using <code>async</code>. The increased complexity of the
+asynchronous programming model isn't always worth it, and it's important to
+consider whether your application would be better served by using a simpler
+threaded model.</p>
+<a class="header" href="#asyncawait-primer" id="asyncawait-primer"><h1><code>async</code>/<code>await!</code> Primer</h1></a>
+<p><code>async</code>/<code>await!</code> is Rust's built-in tool for writing asynchronous functions
+that look like synchronous code. <code>async</code> transforms a block of code into a
+state machine that implements a trait called <code>Future</code>. Whereas calling a
+blocking function in a synchronous method would block the whole thread,
+blocked <code>Future</code>s will yield control of the thread, allowing other
+<code>Future</code>s to run.</p>
+<p>To create an asynchronous function, you can use the <code>async fn</code> syntax:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+async fn do_something() { ... }
+#}</code></pre></pre>
+<p>The value returned by <code>async fn</code> is a <code>Future</code> that needs to be run on
+an executor in order for anything to happen:</p>
+<pre><pre class="playpen"><code class="language-rust">// `block_on` blocks the current thread until the provided future has run to
+// completion. Other executors provide more complex behavior, like scheudling
+// multiple futures onto the same thread.
+use futures::executor::block_on;
+
+async fn hello_world() {
+    println!(&quot;hello, world!&quot;);
+}
+
+fn main() {
+    let future = hello_world(); // Nothing is printed
+    block_on(future); // `future` is run and &quot;hello, world!&quot; is printed
+}
+</code></pre></pre>
+<p>Inside an <code>async fn</code>, you can use <code>await!</code> to wait for the completion of
+another type that implements the <code>Future</code> trait, such as the output of
+another <code>async fn</code>. Unlike <code>block_on</code>, <code>await!</code> doesn't block the current
+thread, but instead asynchronously waits for the future to complete, allowing
+other tasks to run if the future is currently unable to make progress.</p>
+<p>For example, imagine that we have three <code>async fn</code>: <code>learn_song</code>, <code>sing_song</code>,
+and <code>dance</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+async fn learn_song() -&gt; Song { ... }
+async fn sing_song(song: Song) { ... }
+async fn dance() { ... }
+#}</code></pre></pre>
+<p>One way to do learn, sing, and dance would be to block on each of these
+individually:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+  let song = block_on(learn_song());
+  block_on(sing_song(song));
+  block_on(dance);
+}
+</code></pre></pre>
+<p>However, we're not giving the best performance possible this way-- we're
+only ever doing one thing at once! Clearly we have to learn the song before
+we can sing it, but it's possible to dance at the same time as learning and
+singing the song. To do this, we can create two separate <code>async fn</code> which
+can be run concurrently:</p>
+<pre><pre class="playpen"><code class="language-rust">async fn learn_and_sing() {
+    // Wait until the song has been learned before singing it.
+    // We use `await!` here rather than `block_on` to prevent blocking the
+    // thread, which makes it possible to `dance` at the same time.
+    let song = await!(learn_song());
+    await!(sing_song(song));
+}
+
+async fn async_main() {
+    let f1 = learn_and_sing(); 
+    let f2 = dance();
+
+    // `join!` is like `await!` but can wait for multiple futures concurrently.
+    // If we're temporarily blocked in the `learn_and_sing` future, the `dance`
+    // future will take over the current thread. If `dance` becomes blocked,
+    // `learn_and_sing` can take back over. If both futures are blocked, then
+    // `async_main` is blocked and will yield to the executor.
+    join!(f1, f2) 
+}
+
+fn main() {
+    block_on(async_main());
+}
+</code></pre></pre>
+<p>In this example, learning the song must happen before singing the song, but
+both learning and singing can happen at the same time as dancing. If we used
+<code>block_on(learn_song())</code> rather than <code>await!(learn_song())</code> in <code>learn_and_sing</code>,
+the thread wouldn't be able to do anything else while <code>learn_song</code> was running.
+This would make it impossible to dance at the same time. By <code>await!</code>ing
+the <code>learn_song</code> future, we allow other tasks to take over the current thread
+if <code>learn_song</code> is blocked. This makes it possible to run multiple futures
+to completion concurrently on the same thread.</p>
+<p>Now that you've learned the basics of <code>async</code>/<code>await!</code>, let's try out an
+example.</p>
+<a class="header" href="#applied-simple-http-server" id="applied-simple-http-server"><h1>Applied: Simple HTTP Server</h1></a>
+<p>Let's use <code>async</code>/<code>await!</code> to build an echo server!</p>
+<p>To start, run <code>rustup update nightly</code> to make sure you've got the latest and
+greatest copy of Rust-- we're working with bleeding-edge features, so it's
+essential to stay up-to-date. Once you've done that, run
+<code>cargo +nightly new async-await-echo</code> to create a new project, and open up
+the resulting <code>async-await-echo</code> folder.</p>
+<p>Let's add some dependencies to the <code>Cargo.toml</code> file:</p>
+<pre><code class="language-toml">[dependencies]
+
+# The latest version of the &quot;futures&quot; library, which has lots of utilities
+# for writing async code. Enable the &quot;tokio-compat&quot; feature to include the
+# functions for using futures 0.3 and async/await with the Tokio library.
+futures-preview = { version = &quot;0.3.0-alpha.9&quot;, features = [&quot;tokio-compat&quot;] }
+
+# Hyper is an asynchronous HTTP library. We'll use it to power our HTTP
+# server and to make HTTP requests.
+hyper = &quot;0.12.9&quot;
+
+# Tokio is a runtime for asynchronous I/O applications. Hyper uses
+# it for the default server runtime. The `tokio` crate also provides an
+# an `await!` macro similar to the one in `std`, but it supports `await!`ing
+# both futures 0.1 futures (the kind used by Hyper and Tokio) and
+# futures 0.3 futures (the kind produced by the new `async`/`await!` language
+# feature).
+tokio = { version = &quot;0.1.11&quot;, features = [&quot;async-await-preview&quot;] }
+</code></pre>
+<p>Now that we've got our dependencies out of the way, let's start writing some
+code. Open up <code>src/main.rs</code> and enable the following features at the top of
+the file:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![feature(async_await, await_macro, futures_api)]
+#fn main() {
+#}</code></pre></pre>
+<ul>
+<li><code>async_await</code> adds support for the <code>async fn</code> syntax.</li>
+<li><code>await_macro</code> adds support for the <code>await!</code> macro.</li>
+<li><code>futures_api</code> adds support for the nightly <code>std::future</code> and <code>std::task</code>
+modules which define the core <code>Future</code> trait and dependent types.</li>
+</ul>
+<p>Additionally, we have some imports to add:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use {
+    hyper::{
+        // Miscellaneous types from Hyper for working with HTTP.
+        Body, Client, Request, Response, Server, Uri,
+
+        // This function turns a closure which returns a future into an
+        // implementation of the the Hyper `Service` trait, which is an
+        // asynchronous function from a generic `Request` to a `Response`.
+        service::service_fn,
+
+        // A function which runs a future to completion using the Hyper runtime.
+        rt::run,
+    },
+    futures::{
+        // `TokioDefaultSpawner` tells futures 0.3 futures how to spawn tasks
+        // onto the Tokio runtime.
+        compat::TokioDefaultSpawner,
+
+        // Extension traits providing additional methods on futures.
+        // `FutureExt` adds methods that work for all futures, whereas
+        // `TryFutureExt` adds methods to futures that return `Result` types.
+        future::{FutureExt, TryFutureExt},
+    },
+    std::net::SocketAddr,
+
+    // This is the redefinition of the await! macro which supports both
+    // futures 0.1 (used by Hyper and Tokio) and futures 0.3 (the new API
+    // exposed by `std::future` and implemented by `async fn` syntax).
+    tokio::await,
+};
+#}</code></pre></pre>
+<p>Once the imports are out of the way, we can start putting together the
+boilerplate to allow us to serve requests:</p>
+<pre><pre class="playpen"><code class="language-rust">async fn serve_req(req: Request&lt;Body&gt;) -&gt; Result&lt;Response&lt;Body&gt;, hyper::Error&gt; {
+    unimplemented!()
+}
+
+async fn run_server(addr: SocketAddr) {
+    println!(&quot;Listening on http://{}&quot;, addr);
+
+    // Create a server bound on the provided address
+    let serve_future = Server::bind(&amp;addr)
+        // Serve requests using our `async serve_req` function.
+        // `serve` takes a closure which returns a type implementing the
+        // `Service` trait. `service_fn` returns a value implementing the
+        // `Service` trait, and accepts a closure which goes from request
+        // to a future of the response. In order to use our `serve_req`
+        // function with Hyper, we have to box it and put it in a compatability
+        // wrapper to go from a futures 0.3 future (the kind returned by
+        // `async fn`) to a futures 0.1 future (the kind used by Hyper).
+        .serve(|| service_fn(|req|
+            serve_req(req).boxed().compat(TokioDefaultSpawner)
+        ));
+
+    // Wait for the server to complete serving or exit with an error.
+    // If an error occurred, print it to stderr.
+    if let Err(e) = await!(serve_future) {
+        eprintln!(&quot;server error: {}&quot;, e);
+    }
+}
+
+fn main() {
+    // Set the address to run our socket on.
+    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+
+    // Call our run_server function, which returns a future.
+    // As with every `async fn`, we need to run that future in order for
+    // `run_server` to do anything. Additionally, since `run_server` is an
+    // `async fn`, we need to convert it from a futures 0.3 future into a
+    // futures 0.1 future.
+    let futures_03_future = run_server(addr);
+    let futures_01_future =
+        futures_03_future.unit_error().boxed().compat(TokioDefaultSpawner);
+
+    // Finally, we can run the future to completion using the `run` function
+    // provided by Hyper.
+    run(futures_01_future);
+}
+</code></pre></pre>
+<p>If you <code>cargo run</code> now, you should see the message &quot;Listening on
+http://127.0.0.1:300&quot; printed on your terminal. If you open that URL in your
+browser of choice, you'll see &quot;thread ... panicked at 'not yet implemented'.&quot;
+Great! Now we just need to actually handle requests. To start, let's just
+return a static message:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+async fn serve_req(req: Request&lt;Body&gt;) -&gt; Result&lt;Response&lt;Body&gt;, hyper::Error&gt; {
+    // Always return successfully with a response containing a body with
+    // a friendly greeting ;)
+    Ok(Response::new(Body::from(&quot;hello, world!&quot;)))
+}
+#}</code></pre></pre>
+<p>If you <code>cargo run</code> again and refresh the page, you should see &quot;hello, world!&quot;
+appear in your browser. Congratulations! You just wrote your first asynchronous
+webserver in Rust.</p>
+<p>You can also inspect the request itself, which contains information such as
+the request URI, HTTP version, headers, and other metadata. For example, we
+can print out the URI of the request like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+println!(&quot;Got request at {:?}&quot;, req.uri());
+#}</code></pre></pre>
+<p>You may have noticed that we're not yet doing
+anything asynchronous when handling the request-- we just respond immediately,
+so we're not taking advantage of the flexibility that <code>async fn</code> gives us.
+Rather than just returning a static message, let's try proxying the user's
+request to another website using Hyper's HTTP client.</p>
+<p>We start by parsing out the URL we want to request:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let url_str = &quot;http://www.rust-lang.org/en-US/&quot;;
+let url = url_str.parse::&lt;Uri&gt;().expect(&quot;failed to parse URL&quot;);
+#}</code></pre></pre>
+<p>Then we can create a new <code>hyper::Client</code> and use it to make a <code>GET</code> request,
+returning the response to the user:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let res = await!(Client::new().get(url));
+// Return the result of the request directly to the user
+println!(&quot;request finished --returning response&quot;);
+res
+#}</code></pre></pre>
+<p><code>Client::get</code> returns a <code>hyper::client::FutureResponse</code>, which implements
+<code>Future&lt;Output = Result&lt;Response, Error&gt;&gt;</code>
+(or <code>Future&lt;Item = Response, Error = Error&gt;</code> in futures 0.1 terms).
+When we <code>await!</code> that future, an HTTP request is sent out, the current task
+is suspended, and the task is queued to be continued once a response has
+become available.</p>
+<p>Now, if you <code>cargo run</code> and open <code>http://127.0.0.1:3000/foo</code> in your browser,
+you'll see the Rust homepage, and the following terminal output:</p>
+<pre><code>Listening on http://127.0.0.1:3000
+Got request at /foo
+making request to http://www.rust-lang.org/en-US/
+request finished-- returning response
+</code></pre>
+<p>Congratulations! You just proxied an HTTP request.</p>
+<a class="header" href="#under-the-hood-executing-futures-and-tasks" id="under-the-hood-executing-futures-and-tasks"><h1>Under the Hood: Executing <code>Future</code>s and Tasks</h1></a>
+<p>In this section, we'll cover the underlying structure of how <code>Future</code>s and
+asynchronous tasks are scheduled. If you're only interested in learning
+how to write higher-level code that uses existing <code>Future</code> types and aren't
+interested in the details of how <code>Future</code> types work, you can skip ahead to
+the <code>async</code>/<code>await</code> chapter. However, several of the topics discussed in this
+chapter are useful for understanding how <code>async</code>/<code>await</code> code works,
+understanding the runtime and performance properties of <code>async</code>/<code>await</code> code,
+and building new asynchronous primitives. If you decide to skip this section
+now, you may want to bookmark it to revisit in the future.</p>
+<p>Now, with that out of the, way, let's talk about the <code>Future</code> trait.</p>
+<a class="header" href="#the-future-trait" id="the-future-trait"><h1>The <code>Future</code> Trait</h1></a>
+<p>The <code>Future</code> trait is at the center of asynchronous programming in Rust.
+A <code>Future</code> is an asynchronous computation that can produce a value
+(although that value may be empty, e.g. <code>()</code>). A <em>simplified</em> version of
+the future trait might look something like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait SimpleFuture {
+    type Output;
+    fn poll(&amp;mut self, wake: fn()) -&gt; Poll&lt;Self::Output&gt;;
+}
+
+enum Poll&lt;T&gt; {
+    Ready(T),
+    Pending,
+}
+#}</code></pre></pre>
+<p>Futures can be advanced by calling the <code>poll</code> function, which will drive the
+future as far towards completion as possible. If the future completes, it
+returns <code>Poll::Ready(result)</code>. If the future is not able to complete yet, it
+returns <code>Poll::Pending</code> and arranges for the <code>wake()</code> function to be called
+when the <code>Future</code> is ready to make more progress. When <code>wake()</code> is called, the
+executor driving the <code>Future</code> will call <code>poll</code> again so that the <code>Future</code> can
+make more progress.</p>
+<p>Without <code>wake()</code>, the executor would have no way of knowing when a particular
+future could make progress, and would have to be constantly polling every
+future. With <code>wake()</code>, the executor knows exactly which futures are ready to
+be <code>poll</code>ed.</p>
+<p>For example, consider the case where we want to read from a socket that may
+or may not have data available already. If there is data, we can read it
+in and return <code>Poll::Ready(data)</code>, but if no data is ready, our future is
+blocked and can no longer make progress. When no data is available, we
+must register <code>wake</code> to be called when data becomes ready on the socket,
+which will tell the executor that our future is ready to make progress.
+A simple <code>SocketRead</code> future might look something like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct SocketRead&lt;'a&gt; {
+    socket: &amp;'a Socket,
+}
+
+impl SimpleFuture for SocketRead&lt;'_&gt; {
+    type Output = Vec&lt;u8&gt;;
+
+    fn poll(&amp;mut self, wake: fn()) -&gt; Poll&lt;Self::Output&gt; {
+        if self.socket.has_data_to_read() {
+            // The socket has data-- read it into a buffer and return it.
+            Poll::Ready(self.socket.read_buf())
+        } else {
+            // The socket does not yet have data.
+            //
+            // Arrange for `wake` to be called once data is available.
+            // When data becomes available, `wake` will be called, and the
+            // user of this `Future` will know to call `poll` again and
+            // receive data.
+            self.socket.set_readable_callback(wake);
+            Poll::Pending
+        }
+    }
+}
+#}</code></pre></pre>
+<p>This model of <code>Future</code>s allows for composing together multiple asynchronous
+operations without needing intermediate allocations. Running multiple futures
+at once or chaining futures together can be implemented via allocation-free
+state machines, like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// A SimpleFuture that runs two other futures to completion concurrently.
+///
+/// Concurrency is achieved via the fact that calls to `poll` each future
+/// may be interleaved, allowing each future to advance itself at its own pace.
+struct Join2 {
+    // Each field may contain a future that should be run to completion.
+    // If the future has already completed, the field is set to `None`.
+    a: Option&lt;FutureA&gt;,
+    b: Option&lt;FutureB&gt;,
+}
+
+impl SimpleFuture for Join2 {
+    type Output = ();
+    fn poll(&amp;mut self, wake: fn()) -&gt; Poll&lt;Self::Output&gt; {
+        // Attempt to complete future `a`.
+        let finished_a = match &amp;mut self.a {
+            Some(a) =&gt; {
+                match a.poll(wake) {
+                    Poll::Ready(()) =&gt; true,
+                    Poll::Pending =&gt; false,
+                }
+            }
+            None =&gt; true,
+        };
+        if finished_a { self.a.take() }
+
+        // Attempt to complete future `b`.
+        let finished_b = match &amp;mut self.b {
+            Some(b) =&gt; {
+                match b.poll(wake) {
+                    Poll::Ready(()) =&gt; true,
+                    Poll::Pending =&gt; false,
+                }
+            }
+            None =&gt; true,
+        };
+        if finished_b { self.b.take() }
+
+        if finished_a &amp;&amp; finished_b {
+            // Both futures have completed-- we can return successfully
+            Poll::Ready(())
+        } else {
+            // One or both futures still have work to do, and will call
+            // `wake()` when progress can be made.
+            Poll::Pending
+        }
+    }
+}
+#}</code></pre></pre>
+<p>This shows how multiple futures can be run simultaneously without needing
+separate allocations, allowing for more efficient asynchronous programs.
+Similarly, multiple sequential futures can be run one after another, like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// A SimpleFuture that runs two futures to completion, one after another.
+//
+// Note: for the purposes of this simple example, `AndThenFut` assumes both
+// the first and second futures are available at creation-time. The real
+// `AndThen` combinator allows creating the second future based on the output
+// of the first future, like `get_breakfast.and_then(|food| eat(food))`.
+enum AndThenFut {
+    first: Option&lt;FutureA&gt;,
+    second: FutureB,
+}
+
+impl SimpleFuture for AndThenFut {
+    type Output = ();
+    fn poll(&amp;mut self, wake: fn()) -&gt; Poll&lt;Self::Output&gt; {
+        if let Some(first) = &amp;mut self.first {
+            match first.poll(wake) {
+                // We've completed the first future-- remove it and start on
+                // the second!
+                Poll::Ready(()) =&gt; self.first.take(),
+                // We couldn't yet complete the first future.
+                Poll::Pending =&gt; return Poll::Pending,
+            }
+        }
+        // Now that the first future is done, attempt to complete the second.
+        second.poll(wake)
+    }
+}
+#}</code></pre></pre>
+<p>These examples show how the <code>Future</code> trait can be used to express asynchronous
+control flow without requiring multiple allocated objects and deeply nested
+callbacks. With the basic control-flow out of the way, let's talk about the
+real <code>Future</code> trait and how it is different.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait Future {
+    type Output;
+    fn poll(
+        // note the change from `&amp;mut self` to `Pin&lt;&amp;mut Self&gt;`
+        self: Pin&lt;&amp;mut Self&gt;, 
+        lw: &amp;LocalWaker, // note the change from `wake: fn()`
+    ) -&gt; Poll&lt;Self::Output&gt;;
+}
+#}</code></pre></pre>
+<p>The first change you'll notice is that our <code>self</code> type is no longer <code>&amp;mut self</code>,
+but has changed to <code>Pin&lt;&amp;mut Self&gt;</code>. We'll talk more about pinning in <a href="TODO">a later
+section</a>, but for now know that it allows us to create futures that
+are immovable. Immovable objects can store pointers between their fields,
+e.g. <code>struct MyFut { a: i32, ptr_to_a: *const i32 }</code>. This feature is necessary
+in order to enable async/await.</p>
+<p>Secondly, <code>wake: fn()</code> has changed to <code>LocalWaker</code>. In <code>SimpleFuture</code>, we used
+a call to a function pointer (<code>fn()</code>) to tell the future executor that the
+future in question should be polled. However, since <code>fn()</code> is zero-sized, it
+can't store any data about <em>which</em> <code>Future</code> called <code>wake</code>.
+In a real-world scenario, a complex application like a web server may have
+thousands of different connections whose wakeups should all be
+managed separately. This is where <code>LocalWaker</code> and its sibling type <code>Waker</code>
+come in.</p>
+<a class="header" href="#task-wakeups-with-localwaker-and-waker" id="task-wakeups-with-localwaker-and-waker"><h1>Task Wakeups with <code>LocalWaker</code> and <code>Waker</code></h1></a>
+<p>It's common that futures aren't able to complete the first time they are
+<code>poll</code>ed. When this happens, the future needs to ensure that it is polled
+again once it is ready to make more progress. This is done with the
+<code>LocalWaker</code> and <code>Waker</code> types.</p>
+<p>Each time a future is polled, it is polled as part of a &quot;task&quot;. Tasks are
+the top-level futures that have been submitted to an executor.</p>
+<p><code>LocalWaker</code> and <code>Waker</code> each provide a <code>wake()</code> method that can be used to
+tell the executor that their associated task should be awoken. When <code>wake()</code> is
+called, the executor knows that the task associated with the <code>Waker</code> is ready to
+make progress, and its future should be polled again.</p>
+<p><code>LocalWaker</code> and <code>Waker</code> also implement <code>clone()</code> so that
+they can be copied around and stored. The difference between the two is
+thread-safety: <code>LocalWaker</code> is <code>!Send</code> and <code>!Sync</code>, and so cannot be used from
+threads other than the one it was created from. This allows <code>LocalWaker</code>
+implementations to perform special optimized behavior for the current thread.
+<code>Waker</code>s, on the other hand, are <code>Send</code> and <code>Sync</code>, and so can be used across
+multiple threads. A <code>LocalWaker</code> can be turned into a thread-safe <code>Waker</code> using
+the <code>into_waker()</code> function. This function is free to call-- it doesn't
+allocate at runtime or anything similar, but calling <code>wake()</code> on the resulting
+<code>Waker</code> may be less performant than calling <code>wake()</code> on the original
+<code>LocalWaker</code>.</p>
+<p>Let's try implementing a simple timer future using <code>Waker</code> and <code>LocalWaker</code>.</p>
+<a class="header" href="#applied-build-a-timer" id="applied-build-a-timer"><h2>Applied: Build a Timer</h2></a>
+<p>For the sake of the example, we'll just spin up a new thread when the timer
+is created, sleep for the required time, and then signal the timer future
+when the time window has elapsed.</p>
+<p>Here are the imports we'll need to get started:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![feature(arbitrary_self_types, futures_api, pin)]
+
+#fn main() {
+use std::{
+    future::Future,
+    pin::{Pin, Unpin},
+    sync::{Arc, Mutex},
+    task::{LocalWaker, Poll, Waker},
+    thread,
+    time::Duration,
+};
+#}</code></pre></pre>
+<p>Let's start by defining the future type itself. Our future needs a way for the
+thread to communicate that the timer has elapsed and the future should complete.
+We'll use a shared <code>Arc&lt;Mutex&lt;..&gt;&gt;</code> value to communicate between the thread and
+the future.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct TimerFuture {
+    shared_state: Arc&lt;Mutex&lt;SharedState&gt;&gt;,
+}
+
+/// Shared state between the future and the thread
+struct SharedState {
+    /// Whether or not the sleep time has elapsed
+    completed: bool,
+
+    /// The waker for the task that `TimerFuture` is running on.
+    /// The thread can use this after setting `completed = true` to tell
+    /// `TimerFuture`'s task to wake up, see that `completed = true`, and
+    /// move forward.
+    waker: Option&lt;Waker&gt;,
+}
+
+// Pinning will be covered later-- for now, it's enough to understand that our
+// `TimerFuture` type doesn't require it, so it is `Unpin`.
+impl Unpin for TimerFuture {}
+#}</code></pre></pre>
+<p>Now, let's actually write the <code>Future</code> implementation!</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Future for TimerFuture {
+    type Output = ();
+    fn poll(self: Pin&lt;&amp;mut Self&gt;, lw: &amp;LocalWaker)
+        -&gt; Poll&lt;Self::Output&gt;
+    {
+        // Look at the shared state to see if the timer has already completed.
+        let mut shared_state = self.shared_state.lock().unwrap();
+        if shared_state.completed {
+            Poll::Ready(())
+        } else {
+            // Set waker so that the thread can wake up the current task
+            // when the timer has completed, ensuring that the future is polled
+            // again and sees that `completed = true`.
+            shared_state.waker = Some(lw.clone().into_waker());
+            Poll::Pending
+        }
+    }
+}
+#}</code></pre></pre>
+<p>Pretty simple, right? If the thread has set <code>shared_state.completed = true</code>,
+we're done! Otherwise, we clone the <code>LocalWaker</code> for the current task,
+convert it into a <code>Waker</code>, and pass it to <code>shared_state.waker</code> so that the
+thread can wake the task back up.</p>
+<p>Importantly, we have to update the <code>Waker</code> every time the future is polled
+because the future may have moved to a different task with a different
+<code>Waker</code>. This will happen when futures are passed around between tasks after
+being polled.</p>
+<p>Finally, we need the API to actually construct the timer and start the thread:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl TimerFuture {
+    /// Create a new `TimerFuture` which will complete after the provided
+    /// timeout.
+    pub fn new(duration: Duration) -&gt; Self {
+        let shared_state = Arc::new(Mutex::new(SharedState {
+            completed: false,
+            waker: None,
+        }));
+
+        // Spawn the new thread
+        let thread_shared_state = shared_state.clone();
+        thread::spawn(move || {
+            thread::sleep(duration);
+            let mut shared_state = thread_shared_state.lock().unwrap();
+            // Signal that the timer has completed and wake up the last
+            // task on which the future was polled, if one exists.
+            shared_state.completed = true;
+            if let Some(waker) = &amp;shared_state.waker {
+                waker.wake();
+            }
+        });
+
+        TimerFuture { shared_state }
+    }
+}
+#}</code></pre></pre>
+<p>Woot! That's all we need to build a simple timer future. Now, if only we had
+an executor to run the future on...</p>
+<a class="header" href="#task-wakeups-with-localwaker-and-waker-1" id="task-wakeups-with-localwaker-and-waker-1"><h1>Task Wakeups with <code>LocalWaker</code> and <code>Waker</code></h1></a>
+<p>It's common that futures aren't able to complete the first time they are
+<code>poll</code>ed. When this happens, the future needs to ensure that it is polled
+again once it is ready to make more progress. This is done with the
+<code>LocalWaker</code> and <code>Waker</code> types.</p>
+<p>Each time a future is polled, it is polled as part of a &quot;task&quot;. Tasks are
+the top-level futures that have been submitted to an executor.</p>
+<p><code>LocalWaker</code> and <code>Waker</code> each provide a <code>wake()</code> method that can be used to
+tell the executor that their associated task should be awoken. When <code>wake()</code> is
+called, the executor knows that the task associated with the <code>Waker</code> is ready to
+make progress, and its future should be polled again.</p>
+<p><code>LocalWaker</code> and <code>Waker</code> also implement <code>clone()</code> so that
+they can be copied around and stored. The difference between the two is
+thread-safety: <code>LocalWaker</code> is <code>!Send</code> and <code>!Sync</code>, and so cannot be used from
+threads other than the one it was created from. This allows <code>LocalWaker</code>
+implementations to perform special optimized behavior for the current thread.
+<code>Waker</code>s, on the other hand, are <code>Send</code> and <code>Sync</code>, and so can be used across
+multiple threads. A <code>LocalWaker</code> can be turned into a thread-safe <code>Waker</code> using
+the <code>into_waker()</code> function. This function is free to call-- it doesn't
+allocate at runtime or anything similar, but calling <code>wake()</code> on the resulting
+<code>Waker</code> may be less performant than calling <code>wake()</code> on the original
+<code>LocalWaker</code>.</p>
+<p>Let's try implementing a simple timer future using <code>Waker</code> and <code>LocalWaker</code>.</p>
+<a class="header" href="#applied-build-a-timer-1" id="applied-build-a-timer-1"><h2>Applied: Build a Timer</h2></a>
+<p>For the sake of the example, we'll just spin up a new thread when the timer
+is created, sleep for the required time, and then signal the timer future
+when the time window has elapsed.</p>
+<p>Here are the imports we'll need to get started:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![feature(arbitrary_self_types, futures_api, pin)]
+
+#fn main() {
+use std::{
+    future::Future,
+    pin::{Pin, Unpin},
+    sync::{Arc, Mutex},
+    task::{LocalWaker, Poll, Waker},
+    thread,
+    time::Duration,
+};
+#}</code></pre></pre>
+<p>Let's start by defining the future type itself. Our future needs a way for the
+thread to communicate that the timer has elapsed and the future should complete.
+We'll use a shared <code>Arc&lt;Mutex&lt;..&gt;&gt;</code> value to communicate between the thread and
+the future.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct TimerFuture {
+    shared_state: Arc&lt;Mutex&lt;SharedState&gt;&gt;,
+}
+
+/// Shared state between the future and the thread
+struct SharedState {
+    /// Whether or not the sleep time has elapsed
+    completed: bool,
+
+    /// The waker for the task that `TimerFuture` is running on.
+    /// The thread can use this after setting `completed = true` to tell
+    /// `TimerFuture`'s task to wake up, see that `completed = true`, and
+    /// move forward.
+    waker: Option&lt;Waker&gt;,
+}
+
+// Pinning will be covered later-- for now, it's enough to understand that our
+// `TimerFuture` type doesn't require it, so it is `Unpin`.
+impl Unpin for TimerFuture {}
+#}</code></pre></pre>
+<p>Now, let's actually write the <code>Future</code> implementation!</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Future for TimerFuture {
+    type Output = ();
+    fn poll(self: Pin&lt;&amp;mut Self&gt;, lw: &amp;LocalWaker)
+        -&gt; Poll&lt;Self::Output&gt;
+    {
+        // Look at the shared state to see if the timer has already completed.
+        let mut shared_state = self.shared_state.lock().unwrap();
+        if shared_state.completed {
+            Poll::Ready(())
+        } else {
+            // Set waker so that the thread can wake up the current task
+            // when the timer has completed, ensuring that the future is polled
+            // again and sees that `completed = true`.
+            shared_state.waker = Some(lw.clone().into_waker());
+            Poll::Pending
+        }
+    }
+}
+#}</code></pre></pre>
+<p>Pretty simple, right? If the thread has set <code>shared_state.completed = true</code>,
+we're done! Otherwise, we clone the <code>LocalWaker</code> for the current task,
+convert it into a <code>Waker</code>, and pass it to <code>shared_state.waker</code> so that the
+thread can wake the task back up.</p>
+<p>Importantly, we have to update the <code>Waker</code> every time the future is polled
+because the future may have moved to a different task with a different
+<code>Waker</code>. This will happen when futures are passed around between tasks after
+being polled.</p>
+<p>Finally, we need the API to actually construct the timer and start the thread:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl TimerFuture {
+    /// Create a new `TimerFuture` which will complete after the provided
+    /// timeout.
+    pub fn new(duration: Duration) -&gt; Self {
+        let shared_state = Arc::new(Mutex::new(SharedState {
+            completed: false,
+            waker: None,
+        }));
+
+        // Spawn the new thread
+        let thread_shared_state = shared_state.clone();
+        thread::spawn(move || {
+            thread::sleep(duration);
+            let mut shared_state = thread_shared_state.lock().unwrap();
+            // Signal that the timer has completed and wake up the last
+            // task on which the future was polled, if one exists.
+            shared_state.completed = true;
+            if let Some(waker) = &amp;shared_state.waker {
+                waker.wake();
+            }
+        });
+
+        TimerFuture { shared_state }
+    }
+}
+#}</code></pre></pre>
+<p>Woot! That's all we need to build a simple timer future. Now, if only we had
+an executor to run the future on...</p>
+<a class="header" href="#applied-build-an-executor" id="applied-build-an-executor"><h1>Applied: Build an Executor</h1></a>
+<p><code>Future</code>s are lazy and must be actively driven to completion in order to do
+anything. A common way to drive a future to completion is to <code>await!</code> it inside
+an <code>async</code> function, but that just pushes the problem one level up: who will
+run the futures returned from the top-level <code>async</code> functions? The answer is
+that we need a <code>Future</code> executor.</p>
+<p><code>Future</code> executors take a set of top-level <code>Future</code>s and run them to completion
+by calling <code>poll</code> whenever the <code>Future</code> can make progress. Typically, an
+executor will <code>poll</code> a future once to start off. When <code>Future</code>s indicate that
+they are ready to make progress by calling <code>wake()</code>, they are placed back
+onto a queue and <code>poll</code> is called again, repeating until the <code>Future</code> has
+completed.</p>
+<p>In this section, we'll write our own simple executor capable of running a large
+number of top-level futures to completion concurrently.</p>
+<p>For this one, we're going to have to include the <code>futures</code> crate in order to
+get the <code>FutureObj</code> type, which is a dynamically-dispatched <code>Future</code>, similar
+to <code>Box&lt;dyn Future&lt;Output = T&gt;&gt;</code>. <code>Cargo.toml</code> should look something like this:</p>
+<pre><code class="language-toml">[package]
+name = &quot;xyz&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;XYZ Author&quot;]
+edition = &quot;2018&quot;
+
+[dependencies]
+futures-preview = &quot;0.3.0-alpha.9&quot;
+</code></pre>
+<p>Next, we need the following imports at the top of <code>src/main.rs</code>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![feature(arbitrary_self_types, async_await, await_macro, futures_api, pin)]
+
+#fn main() {
+use {
+    futures::future::FutureObj,
+    std::{
+        future::Future,
+        pin::Pin,
+        sync::{Arc, Mutex},
+        sync::mpsc::{sync_channel, SyncSender, Receiver},
+        task::{
+            local_waker_from_nonlocal,
+            Poll, Wake,
+        },
+    },
+};
+#}</code></pre></pre>
+<p>Our executor will work by sending tasks to run over a channel. The executor
+will pull events off of the channel and run them. When a task is ready to
+do more work (is awoken), it can schedule itself to be polled again by
+putting itself back onto the channel.</p>
+<p>In this design, the executor itself just needs the receiving end of the task
+channel. The user will get a sending end so that they can spawn new futures.
+Tasks themselves are just futures that can reschedule themselves, so we'll
+store them as a future paired with a sender that the task can use to requeue
+itself.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Task executor that receives tasks off of a channel and runs them.
+struct Executor {
+    ready_queue: Receiver&lt;Arc&lt;Task&gt;&gt;,
+}
+
+/// `Spawner` spawns new futures onto the task channel.
+#[derive(Clone)]
+struct Spawner {
+    task_sender: SyncSender&lt;Arc&lt;Task&gt;&gt;,
+}
+
+/// A future that can reschedule itself to be polled using a channel.
+struct Task {
+    // In-progress future that should be pushed to completion
+    //
+    // The `Mutex` is not necessary for correctness, since we only have
+    // one thread executing tasks at once. However, `rustc` isn't smart
+    // enough to know that `future` is only mutated from one thread,
+    // so we use it in order to provide safety. A production executor would
+    // not need this, and could use `UnsafeCell` instead.
+    future: Mutex&lt;Option&lt;FutureObj&lt;'static, ()&gt;&gt;&gt;,
+
+    // Handle to spawn tasks onto the task queue
+    task_sender: SyncSender&lt;Arc&lt;Task&gt;&gt;,
+}
+
+fn new_executor_and_spawner() -&gt; (Executor, Spawner) {
+    // Maximum number of tasks to allow queueing in the channel at once.
+    // This is just to make `sync_channel` happy, and wouldn't be present in
+    // a real executor.
+    const MAX_QUEUED_TASKS: usize = 10_000;
+    let (task_sender, ready_queue) = sync_channel(MAX_QUEUED_TASKS);
+    (Executor { ready_queue }, Spawner { task_sender})
+}
+#}</code></pre></pre>
+<p>Let's also add a method to spawner to make it easy to spawn new futures.
+This method will take a future type, box it and put it in a FutureObj,
+and create a new <code>Arc&lt;Task&gt;</code> with it inside which can be enqueued onto the
+executor.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Spawner {
+    fn spawn(&amp;self, future: impl Future&lt;Output = ()&gt; + 'static + Send) {
+        let future_obj = FutureObj::new(Box::new(future));
+        let task = Arc::new(Task {
+            future: Mutex::new(Some(future_obj)),
+            task_sender: self.task_sender.clone(),
+        });
+        self.task_sender.send(task).expect(&quot;too many tasks queued&quot;);
+    }
+}
+#}</code></pre></pre>
+<p>In order poll futures, we'll also need to create a <code>LocalWaker</code> to provide to
+poll. As discussed in the <a href="TODO">task wakeups section</a>, <code>LocalWaker</code>s are responsible
+for scheduling a task to be polled again once <code>wake</code> is called. Remember that
+<code>LocalWaker</code>s tell the executor exactly which task has become ready, allowing
+them to poll just the futures that are ready to make progress. The easiest way
+to create a new <code>LocalWaker</code> is by implementing the <code>Wake</code> trait and then using
+the <code>local_waker_from_nonlocal</code> or <code>local_waker</code> functions to turn a <code>Arc&lt;T: Wake&gt;</code>
+into a <code>LocalWaker</code>. Let's implement <code>Wake</code> for our tasks to allow them to be
+turned into <code>LocalWaker</code>s and awoken:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Wake for Task {
+    fn wake(arc_self: &amp;Arc&lt;Self&gt;) {
+        // Implement `wake` by sending this task back onto the task channel
+        // so that it will be polled again by the executor.
+        let cloned = arc_self.clone();
+        arc_self.task_sender.send(cloned).expect(&quot;too many tasks queued&quot;);
+    }
+}
+#}</code></pre></pre>
+<p>When a <code>LocalWaker</code> is created from an <code>Arc&lt;Task&gt;</code>, calling <code>wake()</code> on it will
+cause a copy of the <code>Arc</code> to be sent onto the task channel. Our executor then
+needs to pick up the task and poll it. Let's implement that:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Executor {
+    fn run(&amp;self) {
+        while let Ok(task) = self.ready_queue.recv() {
+            let mut future_slot = task.future.lock().unwrap();
+            // Take the future, and if it has not yet completed (is still Some),
+            // poll it in an attempt to complete it.
+            if let Some(mut future) = future_slot.take() {
+                // Create a `LocalWaker` from the task itself
+                let lw = local_waker_from_nonlocal(task.clone());
+                if let Poll::Pending = Pin::new(&amp;mut future).poll(&amp;lw) {
+                    // We're not done processing the future, so put it
+                    // back in its task to be run again in the future.
+                    *future_slot = Some(future);
+                }
+            }
+        }
+    }
+}
+#}</code></pre></pre>
+<p>Congratulations! We now have a working futures executor. We can even use it
+to run <code>async/await!</code> code and custom futures, such as the <code>TimerFuture</code> we
+wrote earlier:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let (executor, spawner) = new_executor_and_spawner();
+    spawner.spawn(async {
+        println!(&quot;howdy!&quot;);
+        // Wait for our timer future to complete after two seconds.
+        await!(TimerFuture::new(Duration::new(2, 0)));
+        println!(&quot;done!&quot;);
+    });
+    executor.run();
+}
+</code></pre></pre>
+<a class="header" href="#executors-and-system-io" id="executors-and-system-io"><h1>Executors and System IO</h1></a>
+<p>In the previous section on <a href="TODO">The <code>Future</code> Trait</a>, we discussed this example of
+a future that performed an asynchronous read on a socket:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct SocketRead&lt;'a&gt; {
+    socket: &amp;'a Socket,
+}
+
+impl SimpleFuture for SocketRead&lt;'_&gt; {
+    type Output = Vec&lt;u8&gt;;
+
+    fn poll(self: Pin&lt;&amp;mut Self&gt;, lw: &amp;LocalWaker) -&gt; Poll&lt;Self::Output&gt; {
+        if self.socket.has_data_to_read() {
+            // The socket has data-- read it into a buffer and return it.
+            Poll::Ready(self.socket.read_buf())
+        } else {
+            // The socket does not yet have data.
+            //
+            // Arrange for `wake` to be called once data is available.
+            // When data becomes available, `wake` will be called, and the
+            // user of this `Future` will know to call `poll` again and
+            // receive data.
+            self.socket.set_readable_callback(lw);
+            Poll::Pending
+        }
+    }
+}
+#}</code></pre></pre>
+<p>This future will read available data on a socket, and if no data is available,
+it will yield to the executor, requesting that its task be awoken when the
+socket becomes readable again. However, it's not clear from this example how
+the <code>Socket</code> type is implemented, and in particular it isn't obvious how the
+<code>set_readable_callback</code> function works. How can we arrange for <code>lw.wake()</code>
+to be called once the socket becomes readable? One option would be to have
+a thread that continually checks whether <code>socket</code> is readable, calling
+<code>wake()</code> when appropriate. However, this would be quite inefficient, requiring
+a separate thread for each blocked IO future. This would greatly reduce the
+efficiency of our async code.</p>
+<p>In practice, this problem is solved through integration with an IO-aware
+system blocking primitive, such as <code>epoll</code> on Linux, <code>kqueue</code> on FreeBSD and
+Mac OS, IOCP on Windows, and <code>port</code>s on Fuchsia (all of which are exposed
+through the cross-platform Rust crate <a href="https://github.com/carllerche/mio"><code>mio</code></a>). These primitives all allow
+a thread to block on multiple asynchronous IO events, returning once one of
+the events completes. In practice, these APIs usually look something like
+this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct IoBlocker {
+    ...
+}
+
+struct Event {
+    // An ID uniquely identifying the event that occurred and was listened for.
+    id: usize,
+
+    // A set of signals to wait for, or which occurred.
+    signals: Signals,
+}
+
+impl IoBlocker {
+    /// Create a new collection of asynchronous IO events to block on.
+    fn new() -&gt; Self { ... }
+
+    /// Express an interest in a particular IO event.
+    fn add_io_event_interest(
+        &amp;self,
+
+        /// The object on which the event will occur
+        io_object: &amp;IoObject,
+
+        /// A set of signals that may appear on the `io_object` for
+        /// which an event should be triggered, paried with
+        /// an ID to give to events that result from this interest.
+        event: Event,
+    ) { ... }
+
+    /// Block until one of the events occurs.
+    /// This will only trigget
+    fn block(&amp;self) -&gt; Event { ... }
+}
+
+let mut io_blocker = IoBlocker::new();
+io_blocker.add_io_event_interest(
+    &amp;socket_1,
+    Event { id: 1, signals: READABLE },
+);
+io_blocker.add_io_event_interest(
+    &amp;socket_2,
+    Event { id: 2, signals: READABLE | WRITABLE },
+);
+let event = io_blocker.block();
+
+// prints e.g. &quot;Socket 1 is now READABLE&quot; if socket one became readable.
+println!(&quot;Socket {:?} is now {:?}&quot;, event.id, event.signals);
+#}</code></pre></pre>
+<p>Futures executors can use these primitives to provide asynchronous IO objects
+such as sockets that can configure callbacks to be run when a particular IO
+event occurs. In the case of our <code>SocketRead</code> example above, the
+<code>Socket::set_readable_callback</code> function might look like the following pseudocode:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Socket {
+    fn set_readable_callback(&amp;self, lw: &amp;LocalWaker) {
+        // `local_executor` is a reference to the local executor.
+        // this could be provided at creation of the socket, but in practice
+        // many executor implementations pass it down through thread local
+        // storage for convenience.
+        let local_executor = self.local_executor;
+
+        // Unique ID for this IO object.
+        let id = self.id;
+
+        // Store the local waker in the executor's map so that it can be called
+        // once the IO event arrives.
+        local_executor.event_map.insert(id, lw.clone());
+        local_executor.add_io_event_interest(
+            &amp;self.socket_file_descriptor,
+            Event { id, signals: READABLE },
+        );
+    }
+}
+#}</code></pre></pre>
+<p>We can now have just one executor thread which can receive and dispatch any
+IO event to the appropriate <code>LocalWaker</code>, which will wake up the corresponding
+task, allowing the executor to drive more tasks to completion before returning
+to check for more IO events (and the cycle continues...).</p>
+<a class="header" href="#pinning" id="pinning"><h1>Pinning</h1></a>
+<p>In order to poll futures, they must be pinned using a special type called
+<code>Pin&lt;T&gt;</code>. If you read the explanation of <a href="TODO">the <code>Future</code> trait</a> in the
+previous section <a href="TODO">&quot;Executing <code>Future</code>s and Tasks&quot;</a>, you'll recognise
+<code>Pin</code> from the <code>self: Pin&lt;&amp;mut Self&gt;</code> in the <code>Future:poll</code> method's definition.
+But what does it mean, and why do we need it?</p>
+<a class="header" href="#why-pinning" id="why-pinning"><h2>Why Pinning</h2></a>
+<p>Pinning makes it possible to guarantee that an object won't ever be moved.
+To understand why this is necessary, we need remember how <code>async</code>/<code>await!</code>
+works. Consider the following code:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+async {
+    await!(fut_one);
+    await!(fut_two);
+}
+#}</code></pre></pre>
+<p>Under the hood, this creates an anonymous type that implements <code>Future</code>,
+providing a <code>poll</code> method that looks something like this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// The `Future` type generated by our `async { ... }` block
+struct AsyncFuture {
+    fut_one: FutOne,
+    fut_two: FutTwo,
+    state: State,
+}
+
+// List of states our `async` block can be in
+enum State {
+    AwaitingFutOne,
+    AwaitingFutTwo,
+    Done,
+}
+
+impl AsyncFuture {
+    fn poll(...) -&gt; Poll&lt;()&gt; {
+        loop {
+            match self.state {
+                State::AwaitingFutOne =&gt; match self.fut_one.poll(..) {
+                    Poll::Ready(()) =&gt; self.state = State::AwaitingFutTwo,
+                    Poll::Pending =&gt; return Poll::Pending,
+                }
+                State::AwaitingFutTwo =&gt; match self.fut_two.poll(..) {
+                    Poll::Ready(()) =&gt; self.state = State::Done,
+                    Poll::Pending =&gt; return Poll::Pending,
+                }
+                State::Done =&gt; return Poll::Ready(()),
+            }
+        }
+    }
+}
+#}</code></pre></pre>
+<p>When <code>poll</code> is first called, it will poll <code>fut_one</code>. If <code>fut_one</code> can't
+complete, <code>AsyncFuture::poll</code> will return. Future calls to <code>poll</code> will pick
+up where the previous one left off. This process continues until the future
+is able to successfully complete.</p>
+<p>However, what happens if we have an <code>async</code> block that uses references?
+For example:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+async {
+    let mut x = [0; 128];
+    let read_into_buf_fut = read_into_buf(&amp;mut x);
+    await!(read_into_buf_fut);
+    println!(&quot;{:?}&quot;, x);
+}
+#}</code></pre></pre>
+<p>What struct does this compile down to?</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct ReadIntoBuf&lt;'a&gt; {
+    buf: &amp;'a mut [u8], // points to `x` below
+}
+
+struct AsyncFuture {
+    x: [u8; 128],
+    read_into_buf_fut: ReadIntoBuf&lt;'what_lifetime?&gt;,
+}
+#}</code></pre></pre>
+<p>Here, the <code>ReadIntoBuf</code> future holds a reference into the other field of our
+structure, <code>x</code>. However, if <code>AsyncFuture</code> is moved, the location of <code>x</code> will
+move as well, invalidating the pointer stored in <code>read_into_buf_fut.buf</code>.</p>
+<p>Pinning futures to a particular spot in memory prevents this problem, making
+it safe to create references to values inside an <code>async</code> block.</p>
+<a class="header" href="#how-to-use-pinning" id="how-to-use-pinning"><h2>How to Use Pinning</h2></a>
+<p>The <code>Pin</code> type wraps pointer types, guaranteeing that the values behind the
+pointer won't be moved. For example, <code>Pin&lt;&amp;mut T&gt;</code>, <code>Pin&lt;&amp;T&gt;</code>,
+<code>Pin&lt;Box&lt;T&gt;&gt;</code> all guarantee that <code>T</code> won't be moved.</p>
+<p>Most types don't have a problem being moved. These types implement a trait
+called <code>Unpin</code>. Pointers to <code>Unpin</code> types can be freely placed into or taken
+out of <code>Pin</code>. For example, <code>u8</code> is <code>Unpin</code>, so <code>Pin&lt;&amp;mut T&gt;</code> behaves just like
+a normal <code>&amp;mut T</code>.</p>
+<p>Some functions require the futures they work with to be <code>Unpin</code>. To use a
+<code>Future</code> or <code>Stream</code> that isn't <code>Unpin</code> with a function that requires
+<code>Unpin</code> types, you'll first have to pin the value using either
+<code>Box::pinned</code> (to create a <code>Pin&lt;Box&lt;T&gt;&gt;</code>) or the <code>pin_utils::pin_mut!</code> macro
+(to create a <code>Pin&lt;&amp;mut T&gt;</code>). <code>Pin&lt;Box&lt;Fut&gt;&gt;</code> and <code>Pin&lt;&amp;mut Fut&gt;</code> can both be
+used as futures, and both implement <code>Unpin</code>.</p>
+<p>For example:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use pin_utils::pin_mut; // `pin_utils` is a handy crate available on crates.io
+
+// A function which takes a `Future` that implements `Unpin`.
+fn execute_unpin_future(x: impl Future&lt;Output = ()&gt; + Unpin) { ... }
+
+let fut = async { ... };
+execute_unpin_future(fut); // Error: `fut` does not implement `Unpin` trait
+
+// Pinning with `Box`:
+let fut = async { ... };
+let fut = Box::pinned(fut);
+execute_unpin_future(fut); // OK
+
+// Pinning with `pin_mut!`:
+let fut = async { ... };
+pin_mut!(fut);
+execute_unpin_future(fut); // OK
+#}</code></pre></pre>
+<a class="header" href="#practical-usage" id="practical-usage"><h1>Practical Usage</h1></a>
+<a class="header" href="#the-stream-trait" id="the-stream-trait"><h1>The <code>Stream</code> Trait</h1></a>
+<p>The <code>Stream</code> trait is similar to <code>Future</code> but can yield multiple values before
+completing, similar to the <code>Iterator</code> trait from the standard library:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+trait Stream {
+    /// The type of value yielded by the stream.
+    type Item;
+
+    /// Attempt to resolve the next item in the stream.
+    /// Returns `Poll::Pending` if not ready, `Poll::Ready(Some(x))` if a value
+    /// is ready, and `Poll::Ready(None)` if the stream has completed.
+    fn poll_next(self: Pin&lt;&amp;mut Self&gt;, lw: &amp;LocalWaker)
+        -&gt; Poll&lt;Option&lt;Self::Item&gt;&gt;;
+}
+#}</code></pre></pre>
+<p>One common example of a <code>Stream</code> is the <code>Receiver</code> for the channel type from
+the <code>futures</code> crate. It will yield <code>Some(val)</code> every time a value is sent
+from the <code>Sender</code> end, and will yield <code>None</code> once the <code>Sender</code> has been
+dropped and all pending messages have been received:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use futures::channel::mpsc;
+use futures::prelude::*;
+
+let fut = async {
+    let (tx, rx) = mpsc::channel(BUFFER_SIZE);
+    await!(tx.send(1)).unwrap();
+    await!(tx.send(2)).unwrap();
+    drop(tx);
+
+    // `StreamExt::next` is similar to `Iterator::next`, but returns a
+    // type that implements `Future&lt;Output = Option&lt;T&gt;&gt;`.
+    assert_eq!(Some(1), await!(rx.next()));
+    assert_eq!(Some(2), await!(rx.next()));
+    assert_eq!(None, await!(rx.next()));
+};
+#}</code></pre></pre>
+<a class="header" href="#patterns-iteration-and-concurrency" id="patterns-iteration-and-concurrency"><h2>Patterns: Iteration and Concurrency</h2></a>
+<p>Similar to synchronous <code>Iterator</code>s, there are many different ways to iterate
+over and process the values in a <code>Stream</code>. There are combinator-style methods
+such as <code>map</code>, <code>filter</code>, and <code>fold</code>, and their early-exit-on-error cousins
+<code>try_map</code>, <code>try_filter</code>, and <code>try_fold</code>.</p>
+<p>Unfortunately, <code>for</code> loops are not yet usable with <code>Stream</code>s, but for
+imperative-style code, <code>while let</code> and <code>.for_each</code> are available:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use futures::prelude::*;
+
+let fut = async {
+    let mut stream: impl Stream&lt;Item = Result&lt;i32, io::Error&gt;&gt; = ...;
+
+    // processing with `try_for_each`:
+    await!(stream.try_for_each(async |item| {
+        // handle `item`
+        Ok(())
+    }))?;
+
+    // processing with `while let`:
+    while let Some(item) = await!(stream.try_next())? {
+        // handle `item`
+    }
+
+    ...
+
+    Ok(())
+};
+#}</code></pre></pre>
+<p>However, if we're just processing one element at a time, we're potentially
+leaving behind opportunity for concurrency, which is, after all, why we're
+writing async code in the first place. To process multiple items from a stream
+concurrently, use the <code>for_each_concurrent</code> and <code>try_for_each_concurrent</code>
+methods:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use futures::prelude::*;
+
+let fut = async {
+    let mut stream: impl Stream&lt;Item = Result&lt;i32, io::Error&gt;&gt; = ...;
+
+    await!(stream.try_for_each_concurrent(MAX_CONCURRENT_JUMPERS, async |num| {
+        await!(jump_n_times(num))?;
+        await!(report_jumps(num))?;
+        Ok(())
+    })?;
+
+    ...
+    Ok(())
+};
+#}</code></pre></pre>
+<p>This approach allows up to <code>MAX_CONCURRENT_JUMPERS</code> to all be jumping at once
+(or performing any operation on the items, for that matter-- the API isn't
+strictly tied to jumping). If you want to allow an unlimited number of
+operations at once, you can use <code>None</code> rather than <code>MAX_CONCURRENT_...</code>, but
+beware that if <code>stream</code> comes from untrusted user input, this can allow
+badly behaved clients to overload the system with too many simultaneous
+requests.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
